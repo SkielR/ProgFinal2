@@ -1,0 +1,69 @@
+﻿@model proyectoClub.Models.socio
+@{
+    ViewBag.Title = "Alta Socio";
+    List<SelectListItem> itemsComb = (List<SelectListItem>)ViewBag.items;
+    List<SelectListItem> itemsCombo = (List<SelectListItem>)ViewBag.items;
+
+
+}
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>Alta Socio </h4>
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">NOMBRE</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.nombre, htmlAttributes: new { @class = "form-control", @id = "txtnombre" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">APELLIDO</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.apellido, htmlAttributes: new { @class = "form-control", @id = "txtapellido" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">TIPO DOCUMENT</label>
+                    <div class="col-sm-6">
+                        @Html.DropDownList("IdTipoDocumento", itemsComb, "Seleccione Tipo Documento", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-6 control-label">NUMERO</label>
+                    <div class="col-sm-6">
+                        @Html.TextBoxFor(model => model.numero, htmlAttributes: new { @class = "form-control", @id = "txtnumero" })
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-6 control-label">TIPO DEPORTE</label>
+                        <div class="col-sm-6">
+                            @Html.DropDownList("idDeporte", itemsComb, "Seleccione Deporte", htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group text-right">
+                        <div class="col-xs-12">
+                            <button class="btn btn btn-primary" type="submit">
+                                GUARDAR SOCIO
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

@@ -1,0 +1,49 @@
+﻿@model proyectoClub.Models.socio
+@{
+    ViewBag.Title = "REPORTE SOCIOS";
+}
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+            <h4>REPORTE SOCIOS</h4>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center">
+                        DEPORTE
+                    </th>
+                    <th class="text-center">
+                        CANTIDAD
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var socio in Model.listaDeporte)
+                {
+                    <tr class="text-center">
+
+                        <td>
+                            @socio.
+                        </td>
+                        <td>
+                            @socio.
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+}
